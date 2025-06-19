@@ -1,3 +1,6 @@
+import add_task
+import view_task
+
 
 # Making to-do list, will be using multiple files functions etc; OOP 
 # Add a 'Add task', 'View task', 'Mark taks as done', 'delete task', 'Clear completed taks', 'Categorise tasks', 'due date remindes'
@@ -11,6 +14,11 @@
 #
 # Some thoughts: which functionalities tie into other functionalties, if mark as done should be integrated as seperate or into view tasks, same with delete tasks
 # Some thoughts: If i should have allfdunctionalites in view tasks ui (terminal), so only need add taks, view tasks and due date reminders ???
-#
-#
+
+
+# add the input (ui of terminal) insode the main and add different functionaltoes nside other files
+def main():
+
+
+
 
