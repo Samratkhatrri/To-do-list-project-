@@ -17,7 +17,7 @@ import view_task
 
 
 # add the input (ui of terminal) insode the main and add different functionaltoes nside other files
-def main():
+
 
 
 
