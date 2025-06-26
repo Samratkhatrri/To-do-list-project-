@@ -22,26 +22,29 @@ class ToDoList:
         
     # make sure correct index of task is completed, when taks is completed mark it complete should show ith the purple tick emoji
     def mark_as_done(self, indx):
-       if 0 < indx < len(self.tasks):
+       if 0 <= indx < len(self.tasks):
           self.tasks[indx].completed = True 
     
     # same thing just remove using pop    
     def delete_task(self, indx):
-       if 0 < indx < len(self.tasks):
+       if 0 <= indx < len(self.tasks):
           self.tasks.pop(indx)
 
-    # just clear all tasks that are completed 
+    # create new list and add all the tasks that are not completed
     def clear_completed_task(self):
-       if self.tasks.completed == True:
-         self.tasks.clear()
-        
-    def due_date(self):
+      new_tasks= []
+      for task in self.tasks:
+         if not task.completed:
+            new_tasks.append(task)
+      self.tasks = new_tasks
 
+    # filter by category or prioirty level 
 
-  # filter options 
-  def categorise():
+    def categorise(self, categorise):
+      return [task for task in self.tasks if task.categorise == categorise]
  
-  def priortiy_level():
+    def priortiy_level(self, priority_level):
+       return [task for task in self.tasks if task.priorty_level == priority_level]
 
 
 
