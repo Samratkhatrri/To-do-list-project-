@@ -1,6 +1,4 @@
-import add_task
-import view_task
-
+from view_task import ToDoList
 
 # Making to-do list, will be using multiple files functions etc; OOP 
 # Add a 'Add task', 'View task', 'Mark taks as done', 'delete task', 'Clear completed taks', 'Categorise tasks', 'due date remindes'
@@ -19,6 +17,26 @@ import view_task
 # add the input (ui of terminal) insode the main and add different functionaltoes nside other files
 
 
+def main ():
+  
+#   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks, 3.mark taks, 4.delete tasks, 5.clear all cmpleted tasks and 6.exit tasks 
+
+
+# add the logic when user enters 1.
+
+# inside one when adding tasks add, priorty if chosen, category and due date of tasks
+
+# add the logic when user enters 2.
+
+# inside viweing task can filter through priorty or category 
+
+# add logic when user enetrs 3.
+
+# add logic when user enters 4.
+
+# add logic when user enters 5.
+
+# add logiv when user enters 6.
 
 
 
