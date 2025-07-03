@@ -1,4 +1,5 @@
 from view_task import ToDoList
+from datetime import datetime
 
 # Making to-do list, will be using multiple files functions etc; OOP 
 # Add a 'Add task', 'View task', 'Mark taks as done', 'delete task', 'Clear completed taks', 'Categorise tasks', 'due date remindes'
@@ -16,27 +17,40 @@ from view_task import ToDoList
 
 # add the input (ui of terminal) insode the main and add different functionaltoes nside other files
 
-
 def main ():
   
-#   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks, 3.mark taks, 4.delete tasks, 5.clear all cmpleted tasks and 6.exit tasks 
+  to_do_list = ToDoList()
+  
+#   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks/ manage, 6.exit tasks 
+  print("\n1) Add Task \n2) View Tasks/ Manage Tasks \n3) Exit tasks")
+  choice= input("Enter Choice: ").strip()
+
+  if choice == '1':
+    titleTask= input("Task: ")
+    categoryTask= input("Category: ")
+
+    while True:
+        dueDate= input("Due Date (dd/mm//yyyy): ")
+        try:
+           date_time= datetime.strptime(dueDate, "%d/%m/%Y")
+           break
+        except ValueError:
+          print("Invalid format. Please enter the date in dd/mm/yyyy format")
+
+    to_do_list.add_task(titleTask, categoryTask, date_time)
+
+  elif choice == '2':
+     print("New feature coming soon")
+
+  else:
+     print("New feature coming soon")
+
+ 
 
 
-# add the logic when user enters 1.
+  
+ 
+# inside viweing task can filter through priorty or category category, mark as done, delete tasks, cleaar all completed tasks
 
-# inside one when adding tasks add, priorty if chosen, category and due date of tasks
-
-# add the logic when user enters 2.
-
-# inside viweing task can filter through priorty or category 
-
-# add logic when user enetrs 3.
-
-# add logic when user enters 4.
-
-# add logic when user enters 5.
-
-# add logiv when user enters 6.
-
-
-
+if __name__ == "__main__":
+  main()

@@ -7,8 +7,8 @@ class ToDoList:
         self.tasks= []
 
     # add tasks and its variables to the list created 
-    def add_task(self, add_task, priority_level, categorise, due_date):
-        new_task= Task(add_task, priority_level, categorise, due_date )
+    def add_task(self, title, category, due_date):
+        new_task= Task(title, category, due_date )
         self.tasks.append(new_task)
 
     # list out the task in view format includs task, prioty level, categor, etc..
@@ -18,7 +18,7 @@ class ToDoList:
           completed_task = "✖️"
         else:
            completed_task = "☑️"
-        print(f"{i+1}. {v_task.add_task} | {v_task.priority_level} | {v_task.categorise} | {v_task.due_date} | {completed_task}")
+        print(f"{i+1}. {v_task.title} | {v_task.category} | {v_task.due_date} | {completed_task}")
         
     # make sure correct index of task is completed, when taks is completed mark it complete should show ith the purple tick emoji
     def mark_as_done(self, indx):
@@ -40,11 +40,8 @@ class ToDoList:
 
     # filter by category or prioirty level 
 
-    def categorise(self, categorise):
-      return [task for task in self.tasks if task.categorise == categorise]
+    def categorise(self, category):
+      return [task for task in self.tasks if task.category == category]
  
-    def priortiy_level(self, priority_level):
-       return [task for task in self.tasks if task.priorty_level == priority_level]
-
-
+    
 
