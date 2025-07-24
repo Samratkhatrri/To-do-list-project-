@@ -39,10 +39,6 @@ class ToDoList:
             new_tasks.append(task)
       self.tasks = new_tasks
 
-    # filter by category or prioirty level 
-
-    def categorise(self, category):
-      return [task for task in self.tasks if task.category == category]
- 
+   
     
 

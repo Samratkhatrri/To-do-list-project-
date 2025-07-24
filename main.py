@@ -23,7 +23,7 @@ def main ():
     
   
     #   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks/ manage, 6.exit tasks 
-    print("\nWelcome to To Do List App")
+    print("\nWelcome to TO DO LIST App")
     print("1) Add Task")
     print("2) View tasks/Manage tasks") 
     print("3) Exit Task")
