@@ -15,10 +15,11 @@ class ToDoList:
     def view_task(self):
       for i, v_task in enumerate(self.tasks):
         if v_task.completed:
-          completed_task = "✖️"
+          completed_task = "☑️"
         else:
-           completed_task = "☑️"
-        print(f"{i+1}. {v_task.title} | {v_task.category} | {v_task.due_date} | {completed_task}")
+           completed_task = "✖️"
+        formatted_date = v_task.due_date.strftime("%d/%m/%Y")   
+        print(f"{i+1}. {v_task.title} | {v_task.category} | {formatted_date} | {completed_task}")
         
     # make sure correct index of task is completed, when taks is completed mark it complete should show ith the purple tick emoji
     def mark_as_done(self, indx):

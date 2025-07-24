@@ -18,38 +18,66 @@ from datetime import datetime
 # add the input (ui of terminal) insode the main and add different functionaltoes nside other files
 
 def main ():
-  
   to_do_list = ToDoList()
+  while True:
+    
   
-#   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks/ manage, 6.exit tasks 
-  print("\n1) Add Task \n2) View Tasks/ Manage Tasks \n3) Exit tasks")
-  choice= input("Enter Choice: ").strip()
+    #   print then enter user input choice have a list of all the functinalties like 1.add task, 2.virw taks/ manage, 6.exit tasks 
+    print("\nWelcome to To Do List App")
+    print("1) Add Task")
+    print("2) View tasks/Manage tasks") 
+    print("3) Exit Task")
+    choice= input("\nEnter Choice: ").strip()
 
-  if choice == '1':
-    titleTask= input("Task: ")
-    categoryTask= input("Category: ")
+    if choice == '1':
+      titleTask= input("Task: ")
+      categoryTask= input("Category: ")
 
-    while True:
-        dueDate= input("Due Date (dd/mm//yyyy): ")
-        try:
-           date_time= datetime.strptime(dueDate, "%d/%m/%Y")
-           break
-        except ValueError:
-          print("Invalid format. Please enter the date in dd/mm/yyyy format")
+      while True:
+          dueDate= input("Due Date (dd/mm//yyyy): ")
+          try:
+             date_time= datetime.strptime(dueDate, "%d/%m/%Y")
+             break
+          except ValueError:
+            print("Invalid format. Please enter the date in dd/mm/yyyy format")
 
-    to_do_list.add_task(titleTask, categoryTask, date_time)
+      to_do_list.add_task(titleTask, categoryTask, date_time)
 
-  elif choice == '2':
-     print("New feature coming soon")
+    elif choice == '2':
+      while True:
+        print("--- Your Tasks ---")
+        to_do_list.view_task()
+        print("\na) Mark task as done")
+        print("b) Delete Task")
+        print("c) Clear completed tasks")
+        print("d) Back to Main menu")
 
-  else:
-     print("New feature coming soon")
+        select_action = input("\nChoose action a/b/c/d: ").strip().lower()
 
- 
+        if select_action == 'a':
+          indx= int(input("Enter Task number to mark as complete: ")) - 1
+          to_do_list.mark_as_done(indx)
 
+        elif select_action == 'b':
+          indx= int(input("Enter Task number to delete: ")) - 1
+          to_do_list.delete_task(indx)
 
-  
- 
+        elif select_action == 'c':
+          to_do_list.clear_completed_task()
+
+        elif select_action == 'd':
+          break
+
+        else: 
+          print("Invalid input. Please try again")
+
+    elif choice == '3':
+      print("Thank you for using TO DO LIST, Goodbye")
+      break
+    
+    else: 
+      print("Invalid input. Try again.")
+
 # inside viweing task can filter through priorty or category category, mark as done, delete tasks, cleaar all completed tasks
 
 if __name__ == "__main__":
